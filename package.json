@@ -1,0 +1,24 @@
+{
+  "name": "register-toggle",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "Dieter Luypaert <dieterluypaert@icloud.com>",
+  "license": "MIT",
+  "repository": "git@github.com:Moeriki/register-toggle.git",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint *.js test/",
+    "test": "jest",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
+  },
+  "devDependencies": {
+    "coveralls": "~2.11.16",
+    "eslint": "~3.16.1",
+    "eslint-config-muriki": "~8.4.0",
+    "eslint-plugin-import": "~2.2.0",
+    "eslint-plugin-jasmine": "~2.2.0",
+    "eslint-plugin-node": "~4.1.0",
+    "jest": "~19.0.2"
+  }
+}
