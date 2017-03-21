@@ -1,32 +1,57 @@
 'use strict';
 
-const NOOP = () => {}; // eslint-disable-line no-empty-function
-
-const DEFAULT_OPTIONS = {
-  check: NOOP,
-  enable: NOOP,
-  enableImmediately: true,
-  disable: NOOP,
-};
+// exports
 
 function registerToggle(userOptions) {
-  const options = Object.assign({}, DEFAULT_OPTIONS, userOptions);
+
+  // private variables
+
+  let enabled = false;
+  const originalValues = {};
+
+  const ctx = Object.assign({
+    extend: {},
+    enable() {
+      if (enabled) {
+        throw new Error(`${ctx.id} is already enabled`);
+      }
+      for (const prop of Object.keys(ctx.properties)) {
+        originalValues[prop] = ctx.extend[prop];
+        ctx.extend[prop] = ctx.properties[prop];
+      }
+      enabled = true;
+    },
+    enableImmediately: true,
+    disable() {
+      if (!enabled) {
+        throw new Error(`${ctx.id} is not enabled`);
+      }
+      for (const prop of Object.keys(ctx.properties)) {
+        ctx.extend[prop] = originalValues[prop];
+        originalValues[prop] = undefined;
+      }
+      enabled = false;
+    },
+    id: 'toggle',
+    properties: {},
+  }, userOptions);
+
+  // exposed
 
   function enable() {
-    options.check();
-    options.enable();
+    ctx.enable();
     return disable;
   }
 
   function disable() {
-    options.disable();
+    ctx.disable();
     return enable;
   }
 
   Object.assign(enable, { enable, disable });
   Object.assign(disable, { enable, disable });
 
-  if (options.enableImmediately) {
+  if (ctx.enableImmediately) {
     return enable();
   }
 

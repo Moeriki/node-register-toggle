@@ -1,8 +1,11 @@
 {
   "name": "register-toggle",
   "version": "1.0.0",
-  "description": "",
-  "keywords": [],
+  "description": "Have you tried turning it off and on again?",
+  "keywords": [
+    "register",
+    "toggle"
+  ],
   "author": "Dieter Luypaert <dieterluypaert@icloud.com>",
   "license": "MIT",
   "repository": "git@github.com:Moeriki/register-toggle.git",
