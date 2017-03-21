@@ -460,7 +460,7 @@ concat-map@0.0.1:
   version "0.0.1"
   resolved concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b
 
-concat-stream@^1.4.6:
+concat-stream@^1.5.2:
   version "1.6.0"
   resolved concat-stream-1.6.0.tgz#0aac662fd52be78964d5532f694784e70110acf7
   dependencies:
@@ -488,9 +488,9 @@ core-util-is@~1.0.0:
   version "1.0.2"
   resolved core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7
 
-coveralls@~2.11.16:
-  version "2.11.16"
-  resolved coveralls-2.11.16.tgz#da9061265142ddee954f68379122be97be8ab4b1
+coveralls@^2.11.16:
+  version "2.12.0"
+  resolved coveralls-2.12.0.tgz#b3d064108e29728385b56e42fc2d119f43e0e517
   dependencies:
     js-yaml "3.6.1"
     lcov-parse "0.0.10"
@@ -578,9 +578,16 @@ diff@^3.0.0:
   version "3.2.0"
   resolved diff-3.2.0.tgz#c9ce393a4b7cbd0b058a725c93df299027868ff9
 
-doctrine@1.5.0, doctrine@^1.2.2:
+doctrine@1.5.0:
   version "1.5.0"
   resolved doctrine-1.5.0.tgz#379dce730f6166f76cefa4e6707a159b02c5a6fa
+  dependencies:
+    esutils "^2.0.2"
+    isarray "^1.0.0"
+
+doctrine@^2.0.0:
+  version "2.0.0"
+  resolved doctrine-2.0.0.tgz#c73d8d2909d22291e1a007a395804da8b665fe63
   dependencies:
     esutils "^2.0.2"
     isarray "^1.0.0"
@@ -679,9 +686,9 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-config-muriki@~8.4.0:
-  version "8.4.0"
-  resolved eslint-config-muriki-8.4.0.tgz#acc2a608949e75c5c683cdfbdf2f13adbe060770
+eslint-config-muriki@^8.4.0:
+  version "8.5.4"
+  resolved eslint-config-muriki-8.5.4.tgz#2b14e79916e3383e5186ac4392bb7a3081b2c375
 
 eslint-import-resolver-node@^0.2.0:
   version "0.2.3"
@@ -698,7 +705,7 @@ eslint-module-utils@^2.0.0:
     debug "2.2.0"
     pkg-dir "^1.0.0"
 
-eslint-plugin-import@~2.2.0:
+eslint-plugin-import@^2.2.0:
   version "2.2.0"
   resolved eslint-plugin-import-2.2.0.tgz#72ba306fad305d67c4816348a4699a4229ac8b4e
   dependencies:
@@ -713,13 +720,13 @@ eslint-plugin-import@~2.2.0:
     minimatch "^3.0.3"
     pkg-up "^1.0.0"
 
-eslint-plugin-jasmine@~2.2.0:
+eslint-plugin-jasmine@^2.2.0:
   version "2.2.0"
   resolved eslint-plugin-jasmine-2.2.0.tgz#7135879383c39a667c721d302b9f20f0389543de
 
-eslint-plugin-node@~4.1.0:
-  version "4.1.0"
-  resolved eslint-plugin-node-4.1.0.tgz#87cb62a96109087bcb5827bd5ae15fd0c49685bb
+eslint-plugin-node@^4.1.0:
+  version "4.2.1"
+  resolved eslint-plugin-node-4.2.1.tgz#52e8e06595d0be63a25fdc237be5e42b69a46eaa
   dependencies:
     ignore "^3.0.11"
     minimatch "^3.0.2"
@@ -727,17 +734,18 @@ eslint-plugin-node@~4.1.0:
     resolve "^1.1.7"
     semver "5.3.0"
 
-eslint@~3.16.1:
-  version "3.16.1"
-  resolved eslint-3.16.1.tgz#9bc31fc7341692cf772e80607508f67d711c5609
+eslint@^3.16.1:
+  version "3.18.0"
+  resolved eslint-3.18.0.tgz#647e985c4ae71502d20ac62c109f66d5104c8a4b
   dependencies:
     babel-code-frame "^6.16.0"
     chalk "^1.1.3"
-    concat-stream "^1.4.6"
+    concat-stream "^1.5.2"
     debug "^2.1.1"
-    doctrine "^1.2.2"
+    doctrine "^2.0.0"
     escope "^3.6.0"
     espree "^3.4.0"
+    esquery "^1.0.0"
     estraverse "^4.2.0"
     esutils "^2.0.2"
     file-entry-cache "^2.0.0"
@@ -781,6 +789,12 @@ esprima@^3.1.1:
   version "3.1.3"
   resolved esprima-3.1.3.tgz#fdca51cee6133895e3c88d535ce49dbff62a4633
 
+esquery@^1.0.0:
+  version "1.0.0"
+  resolved esquery-1.0.0.tgz#cfba8b57d7fba93f17298a8a006a04cda13d80fa
+  dependencies:
+    estraverse "^4.0.0"
+
 esrecurse@^4.1.0:
   version "4.1.0"
   resolved esrecurse-4.1.0.tgz#4713b6536adf7f2ac4f327d559e7756bff648220
@@ -792,7 +806,7 @@ estraverse@^1.9.1:
   version "1.9.3"
   resolved estraverse-1.9.3.tgz#af67f2dc922582415950926091a4005d29c9bb44
 
-estraverse@^4.1.1, estraverse@^4.2.0:
+estraverse@^4.0.0, estraverse@^4.1.1, estraverse@^4.2.0:
   version "4.2.0"
   resolved estraverse-4.2.0.tgz#0dee3fed31fcd469618ce7342099fc1afa0bdb13
 
@@ -1544,7 +1558,7 @@ jest-validate@^19.0.2:
     leven "^2.0.0"
     pretty-format "^19.0.0"
 
-jest@~19.0.2:
+jest@^19.0.2:
   version "19.0.2"
   resolved jest-19.0.2.tgz#b794faaf8ff461e7388f28beef559a54f20b2c10
   dependencies:
@@ -1560,14 +1574,14 @@ js-tokens@^3.0.0:
   version "3.0.1"
   resolved js-tokens-3.0.1.tgz#08e9f132484a2c45a30907e9dc4d5567b7f114d7
 
-js-yaml@3.6.1, js-yaml@^3.5.1:
+js-yaml@3.6.1:
   version "3.6.1"
   resolved js-yaml-3.6.1.tgz#6e5fe67d8b205ce4d22fad05b7781e8dadcc4b30
   dependencies:
     argparse "^1.0.7"
     esprima "^2.6.0"
 
-js-yaml@^3.7.0:
+js-yaml@^3.5.1, js-yaml@^3.7.0:
   version "3.8.2"
   resolved js-yaml-3.8.2.tgz#02d3e2c0f6beab20248d412c352203827d786721
   dependencies:
@@ -1876,7 +1890,7 @@ os-tmpdir@^1.0.1:
   version "1.0.2"
   resolved os-tmpdir-1.0.2.tgz#bbe67406c79aa85c5cfec766fe5734555dfa1274
 
-own-enumerable-keys@^1.0.0:
+own-enumerable-keys@~1.0.0:
   version "1.0.0"
   resolved own-enumerable-keys-1.0.0.tgz#9f16f8a938307660e8ab4d26358fc52619ec8b76
 
