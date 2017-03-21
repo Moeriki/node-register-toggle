@@ -1,5 +1,7 @@
 'use strict';
 
+const ownEnumerableKeys = require('own-enumerable-keys');
+
 // exports
 
 function registerToggle(userOptions) {
@@ -15,7 +17,7 @@ function registerToggle(userOptions) {
       if (enabled) {
         throw new Error(`${ctx.id} is already enabled`);
       }
-      for (const prop of Object.keys(ctx.properties)) {
+      for (const prop of ownEnumerableKeys(ctx.properties)) {
         originalValues[prop] = ctx.extend[prop];
         ctx.extend[prop] = ctx.properties[prop];
       }
@@ -26,7 +28,7 @@ function registerToggle(userOptions) {
       if (!enabled) {
         throw new Error(`${ctx.id} is not enabled`);
       }
-      for (const prop of Object.keys(ctx.properties)) {
+      for (const prop of ownEnumerableKeys(ctx.properties)) {
         ctx.extend[prop] = originalValues[prop];
         originalValues[prop] = undefined;
       }

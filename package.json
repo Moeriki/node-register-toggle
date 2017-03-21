@@ -23,5 +23,8 @@
     "eslint-plugin-jasmine": "~2.2.0",
     "eslint-plugin-node": "~4.1.0",
     "jest": "~19.0.2"
+  },
+  "dependencies": {
+    "own-enumerable-keys": "^1.0.0"
   }
 }
